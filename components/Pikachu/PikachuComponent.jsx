@@ -58,13 +58,10 @@ const CopyableText = styled.div`
   font-size: 1.5vw;
   padding: 1vw;
   background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 1vw;
+  border-radius: 32px;
   cursor: pointer;
-  user-select: all;
   position: relative;
-  bottom: 50px;
-  left: -50px;
-  transform: translateY(10%);
+  bottom: 20px;
   z-index: 4;
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
