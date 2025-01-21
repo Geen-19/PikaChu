@@ -1,46 +1,167 @@
+.about-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  color: #ffffff;
+  margin-right: 50px;
+  margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+.pika-rocket {
+  position: absolute;
+  bottom: -250px;
+  right: -100px;
+  width: 400px; /* Adjust size as needed */
+  height: auto;
+} 
+@media (max-width: 1200px) {
+  .pika-rocket {
+    width: 300px; /* Adjust size for medium screens */
+    bottom: -200px;
+    right: -75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pika-rocket {
+    width: 200px; /* Adjust size for small screens */
+    bottom: -150px;
+    right: -50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pika-rocket {
+    width: 150px; /* Adjust size for extra small screens */
+    bottom: -100px;
+    right: -25px;
+  }
+}
 .about {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1184px;
+    max-width: 1000px;
     height: auto;
+    
     padding: 64px;
     border-radius: 48px;
-    border: 4px solid #c5c5c5;
     backdrop-filter: blur(24px);
-    box-shadow: 0px 0px 128px 32px #9d000029;
-    margin: 0 20px;
+    background: linear-gradient(180deg, rgba(66, 66, 66, 0.5) 0%, rgba(66, 66, 66, 0.05) 100%);
+
+  }
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('../../assets/fonts/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf') format('truetype');
+    font-style: normal;
   }
   
   .about p {
-    font-family: Impact;
+    font-family: 'Satoshi', sans-serif;
+    color: #ffffff;
     font-size: 32px;
-    font-weight: 400;
-    line-height: 39.03px;
+    font-weight: 500;
+    line-height: 43.2px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #ffffff;
   }
   
-  .about h1 {
-    font-family: Impact;
+  .about-cover h1 {
+    font-family: 'Satoshi';
     font-size: 64px;
-    font-weight: 400;
-    line-height: 78.06px;
+    font-weight: 900;
+    line-height: 86.4px;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+  }
+  .buy-button {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: start;
+  }
+  .about button {
+    display: flex;
+    background-color: white;
+    font-family: 'Satoshi1';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.4px;
+    text-align: center;
+    text-underline-position: from-font;
+    justify-content: start;
+    align-items: start;
+    text-decoration-skip-ink: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    color: #000; /* Text color */
+    margin-top: 20px; /* Add some margin to the top */
+  }
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('../../assets/fonts/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Satoshi1';
+    src: url('../../assets/fonts/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf') format('truetype');
+    font-style: normal;
+  }
+  .about p {
+    font-family: 'Satoshi', sans-serif;
     color: #ffffff;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 43.2px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .pika-rocket {
+    position: absolute;
+    bottom: -250px;
+    right: -100px;
+    width: 400px;
+    height: auto;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
   }
   
-  .about-cover {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 150px;
+  .pika-rocket.visible {
+    opacity: 1;
+    animation: rocketFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes rocketFloat {
+    0% {
+      transform: translateY(0) rotate(45deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(45deg);
+    }
+    100% {
+      transform: translateY(0) rotate(45deg);
+    }
+  }
+  .about-cover h1 {
+    font-family: 'Satoshi1';
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 86.4px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
   }
   
   @media (max-width: 768px) {

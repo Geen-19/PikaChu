@@ -1,22 +1,34 @@
 import "./App.css";
-import React from "react";
+import React, { useRef } from 'react';
 import Navbar from "../components/Navbar/Navbar";
 import Banner from "../components/Banner/Banner";
-import PikachuEyes from "../components/Pikachu/Pickachu";
-import BannerRotate from "../components/BannerRotate/BannerRotate";
 import PikachuComponent from "../components/Pikachu/PikachuComponent";
 import About from "../components/About/About";
-
+import Buy from "../components/HowToBuy/Buy";
+import Book from "../components/Book/Book";
+import Footer from "../components/Footer/Footer";
 function App() {
+  const aboutRef = useRef(null);
+  const buyRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="app-cover">
-      <Navbar />
+      <Navbar scrollToSection={scrollToSection} aboutRef={aboutRef} buyRef={buyRef} />
       <PikachuComponent />
       <Banner />
-      <About />
-      <BannerRotate />
+      <div ref={aboutRef}>
+        <About />
+      </div>
+      <div ref={buyRef}>
+        <Buy />
+      </div>
+      <Book />
+      <Footer />
     </div>
-    
   );
 }
 
